@@ -1,7 +1,6 @@
 package dev.remaker.sketchubx.net
 
 import dev.remaker.sketchubx.models.*
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
@@ -21,12 +20,9 @@ interface SketchubApiService {
     suspend fun getAnnouncementList(@Field("api_key") apiKey: String): AnnouncementResponse
 
     companion object {
-        private val okHttpClient = OkHttpClient.Builder().build()
-
         fun create(): SketchubApiService {
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(SketchubApiService::class.java)

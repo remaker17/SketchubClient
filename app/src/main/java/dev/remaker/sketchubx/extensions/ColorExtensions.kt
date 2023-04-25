@@ -4,14 +4,11 @@ import android.app.Dialog
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import androidx.annotation.AttrRes
-import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.use
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import dev.remaker.sketchubx.R
 import dev.remaker.sketchubx.util.ColorUtil
@@ -38,23 +35,6 @@ fun Context.resolveColor(@AttrRes attr: Int, @ColorInt fallback: Int = Color.BLA
     theme.obtainStyledAttributes(intArrayOf(attr)).use { typedArray ->
         typedArray.getColor(0, fallback)
     }
-
-/**
- * Tints the drawable with the given color.
- */
-@CheckResult
-fun Drawable.tint(@ColorInt color: Int): Drawable {
-    val tintedDrawable = DrawableCompat.wrap(this).mutate()
-    DrawableCompat.setTint(tintedDrawable, color)
-    return tintedDrawable
-}
-
-/**
- * Tints the drawable with the color from the given color resource.
- */
-@CheckResult
-fun Drawable.tint(context: Context, @ColorRes color: Int): Drawable =
-    tint(context.getColorRes(color))
 
 /**
  * Returns the color for the given color resource.

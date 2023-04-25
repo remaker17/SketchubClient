@@ -21,9 +21,6 @@ fun Context.getIntRes(@IntegerRes int: Int): Int {
     return resources.getInteger(int)
 }
 
-val Context.generalThemeValue
-    get() = PreferenceUtil.getGeneralThemeValue(isSystemDarkModeEnabled())
-
 fun Context.isSystemDarkModeEnabled(): Boolean {
     val isBatterySaverEnabled =
         (getSystemService<PowerManager>())?.isPowerSaveMode ?: false
@@ -70,8 +67,4 @@ fun Fragment.getDrawableCompat(@DrawableRes drawableRes: Int): Drawable {
 
 fun Fragment.applyToolbar(toolbar: Toolbar) {
     (requireActivity() as AppCompatActivity).applyToolbar(toolbar)
-}
-
-fun Fragment.dip(@DimenRes id: Int): Int {
-    return resources.getDimensionPixelSize(id)
 }

@@ -186,17 +186,13 @@ fun View.focusAndShowKeyboard() {
 
     requestFocus()
     if (hasWindowFocus()) {
-        // No need to wait for the window to get focus.
         showTheKeyboardNow()
     } else {
-        // We need to wait until the window gets focus.
         viewTreeObserver.addOnWindowFocusChangeListener(
             object : ViewTreeObserver.OnWindowFocusChangeListener {
                 override fun onWindowFocusChanged(hasFocus: Boolean) {
-                    // This notification will arrive just before the InputMethodManager gets set up.
                     if (hasFocus) {
                         this@focusAndShowKeyboard.showTheKeyboardNow()
-                        // It’s very important to remove this listener once we are done.
                         viewTreeObserver.removeOnWindowFocusChangeListener(this)
                     }
                 }
@@ -262,11 +258,8 @@ fun View.applyBottomInsets() {
 
 fun View.requestApplyInsetsWhenAttached() {
     if (isAttachedToWindow) {
-        // We're already attached, just request as normal
         requestApplyInsets()
     } else {
-        // We're not attached to the hierarchy, add a listener to
-        // request when we are
         addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
             override fun onViewAttachedToWindow(v: View) {
                 v.removeOnAttachStateChangeListener(this)

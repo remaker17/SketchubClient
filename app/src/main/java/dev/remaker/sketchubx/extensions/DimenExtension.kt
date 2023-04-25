@@ -9,6 +9,10 @@ fun AppCompatActivity.dimToPixel(@DimenRes dimenRes: Int): Int {
     return resources.getDimensionPixelSize(dimenRes)
 }
 
+fun Fragment.dimToPixel(@DimenRes dimenRes: Int): Int {
+    return resources.getDimensionPixelSize(dimenRes)
+}
+
 fun Activity.dipToPix(dpInFloat: Float): Float {
     val scale = resources.displayMetrics.density
     return dpInFloat * scale + 0.5f

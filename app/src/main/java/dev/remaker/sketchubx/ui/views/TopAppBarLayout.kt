@@ -27,7 +27,6 @@ class TopAppBarLayout @JvmOverloads constructor(
             }
         }
         statusBarForeground = MaterialShapeDrawable.createWithElevationOverlay(context)
-        // liftOnScroll = true
     }
 
     fun pinWhenScrolled() {

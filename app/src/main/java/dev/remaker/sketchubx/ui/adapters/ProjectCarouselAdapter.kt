@@ -17,26 +17,6 @@ class ProjectCarouselAdapter(var items: ArrayList<Project>) : RecyclerListView.S
         val cell = holder.itemView as ProjectCarouselCell
 
         cell.bind(project)
-
-//        Unstable code, it is not recommended to use it.
-//        val handler = Handler()
-//        val runnable = object : Runnable {
-//            var i = 0
-//            override fun run() {
-//                Glide.with(cell.banner)
-//                    .load(project.screenshots[i])
-//                    .into(cell.banner)
-//
-//                i++
-//                if (i >= project.screenshots.size) {
-//                    i = 0
-//                }
-//
-//                handler.postDelayed(this, 5000)
-//            }
-//        }
-//
-//        handler.postDelayed(runnable, 0)
     }
 
     override fun getItemCount(): Int {
