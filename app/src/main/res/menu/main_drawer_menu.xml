@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/profile_item"
+        android:title="Profile"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/sk_projects_item"
+        android:title="Sketchware projects"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/codehive_item"
+        android:title="Java codes"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/upload_item"
+        android:title="Upload project"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/settings_item"
+        android:title="Settings"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/rate_item"
+        android:title="Rate us"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/about_item"
+        android:title="About us"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/help_item"
+        android:title="Help"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    android:clickable="true"
+    android:background="?attr/rectSelector"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/icon"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginVertical="8dp"
+        android:adjustViewBounds="true"
+        android:elevation="0.8dp"
+        android:padding="3dp"
+        android:scaleType="centerCrop"
+        android:src="@null"
+        app:shapeAppearanceOverlay="?attr/shapeAppearanceCornerSmall" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <TextView
+            android:id="@+id/author_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:gravity="start"
+            android:singleLine="true"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:alpha="0.8" />
+
+        <LinearLayout
+            android:id="@+id/linear_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/likes_icon"
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_baseline_favorite_border_24" />
+
+            <TextView
+                android:id="@+id/likes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <ImageView
+                android:id="@+id/comments_icon"
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:layout_marginStart="8dp"
+                android:paddingTop="2dp"
+                app:srcCompat="@drawable/ic_comment_outline"
+                app:tint="?attr/colorControlNormal" />
+
+            <TextView
+                android:id="@+id/comments_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <ImageView
+                android:id="@+id/downloads_icon"
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:layout_marginStart="8dp"
+                android:paddingTop="2dp"
+                app:srcCompat="@drawable/ic_downloads"
+                app:tint="?attr/colorControlNormal" />
+
+            <TextView
+                android:id="@+id/downloads_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

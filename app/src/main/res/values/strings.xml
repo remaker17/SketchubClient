@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sketchub</string>
+    <string name="home">Home</string>
+    <string name="projects">Projects</string>
+    <string name="announcements">Announcements</string>
+    <string name="permission_summary">The app needs permission to access your device storage for downloading projects</string>
+    <string name="permission_title">Storage Access</string>
+    <string name="permissions_denied">Permissions denied.</string>
+    <string name="grant_access">Grant access</string>
+    <string name="action_grant">Grant</string>
+</resources>

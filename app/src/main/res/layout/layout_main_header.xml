@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="174dp"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/mtrl_min_touch_target_size"
+        android:layout_height="@dimen/mtrl_min_touch_target_size"
+        android:layout_marginBottom="12dp"
+        app:srcCompat="@drawable/logo"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.M3.Sys.Shape.Corner.Full" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sketchub Support"
+        android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="support@sketchub.in"
+        android:textAppearance="?attr/textAppearanceBodyMedium" />
+</LinearLayout>
