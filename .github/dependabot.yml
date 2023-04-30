@@ -7,11 +7,11 @@ updates:
     schedule:
       interval: daily
       time: '09:00'
-      target-branch: 'master'
+    target-branch: 'master'
 
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      internal: daily
+      interval: daily
       time: '09:00'
-      target-branch: 'master'
+    target-branch: 'master'
