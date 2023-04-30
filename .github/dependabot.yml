@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '09:00'
+      target-branch: 'master'
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      internal: daily
+      time: '09:00'
+      target-branch: 'master'
