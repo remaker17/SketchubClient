@@ -28,4 +28,6 @@
         <item name="android:enforceNavigationBarContrast">false</item>
     </style>
 
+    <style name="ThemeOverlay.Royal" parent="ThemeOverlay.Light.Royal" />
+
 </resources>

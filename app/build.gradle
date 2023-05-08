@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
     id 'org.jlleitschuh.gradle.ktlint'
+    id 'dev.rikka.tools.materialthemebuilder'
 }
 
 android {
@@ -65,4 +66,15 @@ dependencies {
     implementation 'dev.chrisbanes.insetter:insetter:0.6.1'
     implementation 'com.github.TutorialsAndroid:crashx:v4.0.19'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+}
+
+materialThemeBuilder {
+    themes {
+        Royal {
+            primaryColor = "#7C22D6"
+            lightThemeFormat = "ThemeOverlay.Light.%s"
+            darkThemeFormat = "ThemeOverlay.Dark.%s"
+        }
+    }
+    generatePalette = false
 }
