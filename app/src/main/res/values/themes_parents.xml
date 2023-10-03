@@ -4,6 +4,8 @@
     <style name="Theme.Sketchub.Base.Light" parent="Theme.Material3.Light.NoActionBar">
         <item name="roundSelector">@drawable/round_selector</item>
         <item name="rectSelector">@drawable/rect_selector</item>
+        <item name="searchBarBackgroundColor">@android:color/white</item>
+        <item name="actionModeWebSearchDrawable">@drawable/abc_ic_search_api_material</item>
         <item name="android:colorBackground">?attr/colorSurface</item>
         <item name="android:windowBackground">?attr/colorSurface</item>
     </style>
@@ -11,6 +13,8 @@
     <style name="Theme.Sketchub.Base.Dark" parent="Theme.Material3.Dark.NoActionBar">
         <item name="roundSelector">@drawable/round_selector</item>
         <item name="rectSelector">@drawable/rect_selector</item>
+        <item name="searchBarBackgroundColor">?attr/colorSurfaceContainerHigh</item>
+        <item name="actionModeWebSearchDrawable">@drawable/abc_ic_search_api_material</item>
         <item name="android:colorBackground">?attr/colorSurface</item>
         <item name="android:windowBackground">?attr/colorSurface</item>
     </style>

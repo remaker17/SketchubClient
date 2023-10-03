@@ -2,4 +2,5 @@
 <resources>
     <attr name="roundSelector" format="reference" />
     <attr name="rectSelector" format="reference" />
+    <attr name="searchBarBackgroundColor" format="color" />
 </resources>

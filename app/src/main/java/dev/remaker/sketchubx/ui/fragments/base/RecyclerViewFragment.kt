@@ -35,7 +35,7 @@ abstract class RecyclerViewFragment<T : RecyclerView.Adapter<*>> :
     AbsRecyclerViewFragment<FragmentRecyclerBinding, T>(), IScrollHelper {
 
     override fun getViewBinding() = FragmentRecyclerBinding.inflate(layoutInflater)
-    override fun getToolbar(): Toolbar = binding.appBarLayout.toolbar
+    override fun getToolbar(): Toolbar = binding.toolbar
     override fun getAppBar() = binding.appBarLayout
     override fun getRecyclerView() = binding.recyclerView
     abstract override val adapter: T

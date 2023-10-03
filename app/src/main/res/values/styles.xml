@@ -11,4 +11,8 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="ThemeOverlay.Sketchub.MainToolbar" parent="">
+        <item name="colorControlHighlight">@color/selector_overlay</item>
+    </style>
+
 </resources>
