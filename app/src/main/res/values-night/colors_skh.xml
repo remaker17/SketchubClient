@@ -39,5 +39,5 @@
     <color name="skh_onSurfaceVariant">#D7C1C0</color>
     <color name="skh_m3_background">#201A1A</color>
     <color name="skh_m3_bottom_menu">#2F2828</color>
-    <color name="skh_search_bar_background">#2F2828</color>
+    <color name="skh_m3_surface">#2F2828</color>
 </resources>

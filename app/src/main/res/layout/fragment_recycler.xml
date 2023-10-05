@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:enabled="false"
-        android:transitionGroup="true"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        android:transitionGroup="true">
 
-        <dev.remaker.sketchubx.ui.views.insets.InsetsRecyclerView
+        <dev.remaker.sketchubx.core.ui.view.InsetsRecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,44 +20,4 @@
             android:scrollbars="none" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <!-- <dev.remaker.sketchubx.ui.views.TopAppBarLayout -->
-        <!-- android:id="@+id/appBarLayout" -->
-        <!-- style="?attr/appBarLayoutStyle" -->
-        <!-- android:layout_width="match_parent" -->
-        <!-- android:layout_height="wrap_content" -->
-        <!-- android:fitsSystemWindows="true" -->
-        <!-- android:stateListAnimator="@null" /> -->
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:fitsSystemWindows="false"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:stateListAnimator="@null"
-        app:liftOnScroll="false">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/search_bar_background"
-            android:theme="@style/ThemeOverlay.Sketchub.MainToolbar">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                app:contentInsetStartWithNavigation="0dp"
-                app:navigationIcon="?attr/actionModeWebSearchDrawable" />
-        </FrameLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

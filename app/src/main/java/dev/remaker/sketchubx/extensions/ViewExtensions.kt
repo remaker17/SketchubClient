@@ -22,7 +22,7 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigationrail.NavigationRailView
 import dev.chrisbanes.insetter.applyInsetter
-import dev.remaker.sketchubx.util.SketchubUtil
+import dev.remaker.sketchubx.core.util.SketchubUtil
 
 const val ANIM_DURATION = 300L
 

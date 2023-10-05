@@ -41,5 +41,5 @@
     <color name="skh_m3_background">#FFEDEB</color>
     <!-- Primary 90 -->
     <color name="skh_m3_bottom_menu">#FFDAD7</color>
-    <color name="skh_search_bar_background">#FFFFFF</color>
+    <color name="skh_m3_surface">#FFFFFF</color>
 </resources>

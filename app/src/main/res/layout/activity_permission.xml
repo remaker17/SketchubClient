@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <dev.remaker.sketchubx.ui.views.PermissionItem
+            <dev.remaker.sketchubx.core.ui.view.PermissionItem
                 android:id="@+id/storage_permission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +53,6 @@
 
         </LinearLayout>
     </ScrollView>
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/finish"

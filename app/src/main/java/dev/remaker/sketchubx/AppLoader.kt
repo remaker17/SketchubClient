@@ -3,17 +3,24 @@ package dev.remaker.sketchubx
 import android.app.Application
 import android.content.res.Configuration
 import android.os.Handler
-import com.google.android.material.color.DynamicColors
-import dev.remaker.sketchubx.util.AndroidUtilities
+import androidx.appcompat.app.AppCompatDelegate
+import dagger.hilt.android.HiltAndroidApp
+import dev.remaker.sketchubx.core.prefs.AppSettings
+import dev.remaker.sketchubx.core.util.AndroidUtilities
+import javax.inject.Inject
 
+@HiltAndroidApp
 class AppLoader : Application() {
+
+    @Inject
+    lateinit var settings: AppSettings
 
     override fun onCreate() {
         super.onCreate()
         instance = this
         handler = Handler(mainLooper)
 
-        DynamicColors.applyToActivitiesIfAvailable(this)
+        AppCompatDelegate.setDefaultNightMode(settings.theme)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

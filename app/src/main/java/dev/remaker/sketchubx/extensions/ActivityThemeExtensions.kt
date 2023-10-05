@@ -4,7 +4,7 @@ import android.graphics.Color
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.*
-import dev.remaker.sketchubx.util.VersionUtils
+import dev.remaker.sketchubx.core.util.VersionUtils
 
 fun AppCompatActivity.setDrawBehindSystemBars() {
     WindowCompat.setDecorFitsSystemWindows(window, false)

@@ -17,17 +17,33 @@
 
     <style name="Widget.Sketchub.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="android:background">?attr/m3ColorBottomMenuBackground</item>
-        <item name="itemActiveIndicatorStyle">@style/Widget.Sketchub.BottomNavigation.ActiveIndicator</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.Sketchub.BottomNavigationView.ActiveIndicator</item>
         <item name="itemIconTint">@color/bottom_menu_active_item</item>
     </style>
 
-    <style name="Widget.Sketchub.BottomNavigation.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <style name="Widget.Sketchub.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/bottom_menu_active_indicator</item>
     </style>
 
     <style name="Widget.Sketchub.CardView.Outlined" parent="Widget.Material3.CardView.Outlined">
         <item name="cardBackgroundColor">?attr/colorSurfaceContainerLow</item>
         <item name="strokeColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="Widget.Sketchub.CardView.Filled" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">?attr/m3ColorSurface</item>
+    </style>
+
+    <style name="Widget.Sketchub.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:textAppearance">@style/TextAppearance.Sketchub.SearchView</item>
+        <item name="android:textSize">18sp</item>
+        <item name="iconifiedByDefault">false</item>
+        <item name="searchIcon">@null</item>
+        <item name="queryBackground">@null</item>
+    </style>
+
+    <style name="TextAppearance.Sketchub.SearchView" parent="TextAppearance.Material3.SearchBar">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
     </style>
 
     <style name="ThemeOverlay.Sketchub.MainToolbar" parent="">

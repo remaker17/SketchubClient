@@ -1,3 +1,70 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="ThemeOverlay.Royal" parent="ThemeOverlay.Light.Royal" />
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.Sketchub" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/skh_primary</item>
+        <item name="colorOnPrimary">@color/skh_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/skh_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/skh_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/skh_secondary</item>
+        <item name="colorOnSecondary">@color/skh_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/skh_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/skh_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/skh_tertiary</item>
+        <item name="colorOnTertiary">@color/skh_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/skh_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/skh_onTertiaryContainer</item>
+        <item name="colorError">@color/skh_error</item>
+        <item name="colorErrorContainer">@color/skh_errorContainer</item>
+        <item name="colorOnError">@color/skh_onError</item>
+        <item name="colorOnErrorContainer">@color/skh_onErrorContainer</item>
+        <item name="android:colorBackground">@color/skh_m3_background</item>
+        <item name="colorOnBackground">@color/skh_onSurface</item>
+        <item name="colorOutline">@color/skh_outline</item>
+        <item name="colorOnSurfaceInverse">@color/skh_inverseOnSurface</item>
+        <item name="colorSurface">@color/skh_surface</item>
+        <item name="colorSurfaceBright">@color/skh_surfaceBright</item>
+        <item name="colorSurfaceContainerHighest">@color/skh_surfaceContainerHighest</item>
+        <item name="colorSurfaceContainerHigh">@color/skh_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainer">@color/skh_surfaceContainer</item>
+        <item name="colorSurfaceContainerLow">@color/skh_surfaceContainerLow</item>
+        <item name="colorSurfaceContainerLowest">@color/skh_surfaceContainerLowest</item>
+        <item name="colorSurfaceDim">@color/skh_surfaceDim</item>
+        <item name="colorSurfaceInverse">@color/skh_inverseSurface</item>
+        <item name="colorOnSurface">@color/skh_onSurface</item>
+        <item name="colorSurfaceVariant">@color/skh_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/skh_onSurfaceVariant</item>
+        <item name="colorPrimaryInverse">@color/skh_inversePrimary</item>
+
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_regular</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
+
+        <item name="roundSelector">@drawable/round_selector</item>
+        <item name="rectSelector">@drawable/rect_selector</item>
+        <item name="m3ColorBackground">@color/skh_m3_background</item>
+        <item name="m3ColorBottomMenuBackground">@color/skh_m3_bottom_menu</item>
+        <item name="m3ColorSurface">@color/skh_m3_surface</item>
+        <item name="actionModeWebSearchDrawable">@drawable/abc_ic_search_api_material</item>
+
+        <item name="appBarLayoutStyle">@style/Widget.Sketchub.AppBarLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.Sketchub.BottomNavigationView</item>
+        <item name="materialCardViewStyle">@style/Widget.Sketchub.CardView.Filled</item>
+    </style>
+
+    <style name="Theme.Sketchub" parent="Base.Theme.Sketchub" />
+
+    <!-- Monet theme only support S+ -->
+    <style name="Theme.Sketchub.Monet" />
+
+    <style name="ThemeOverlay.Sketchub" parent="ThemeOverlay.Material3.Light" />
+
+    <style name="ThemeOverlay.Sketchub.Amoled" parent="" />
+
 </resources>

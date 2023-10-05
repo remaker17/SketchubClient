@@ -1,6 +1,6 @@
 package dev.remaker.sketchubx.net
 
-import dev.remaker.sketchubx.models.*
+import dev.remaker.sketchubx.core.ui.model.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field

@@ -9,20 +9,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <dev.remaker.sketchubx.ui.views.NoAnimViewPager
-            android:id="@+id/view_pager"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="false"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:stateListAnimator="@null"
+            app:liftOnScroll="false">
+
+            <dev.remaker.sketchubx.core.ui.view.WindowInsetHolder
+                android:id="@+id/insets_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                app:layout_scrollFlags="scroll|enterAlways|snap" />
+
+            <FrameLayout
+                android:id="@+id/toolbar_card"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/search_bar_background"
+                android:theme="@style/ThemeOverlay.Sketchub.MainToolbar">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:navigationIcon="?attr/actionModeWebSearchDrawable">
+
+                    <dev.remaker.sketchubx.search.ui.widget.SearchEditText
+                        android:id="@+id/search_view"
+                        style="@style/Widget.Sketchub.SearchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/search_project"
+                        android:imeOptions="actionSearch"
+                        android:importantForAutofill="no"
+                        android:singleLine="true" />
+                </com.google.android.material.appbar.MaterialToolbar>
+            </FrameLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigationView"
+            android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:minHeight="@dimen/bottom_nav_height"
-            app:itemHorizontalTranslationEnabled="false"
-            app:menu="@menu/main_nav_menu" />
+            app:itemHorizontalTranslationEnabled="false" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
