@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="skh_primary">#B12A30</color>
+    <color name="skh_onPrimary">#FFFFFF</color>
+    <color name="skh_primaryContainer">#FFDAD7</color>
+    <color name="skh_onPrimaryContainer">#410006</color>
+    <color name="skh_secondary">#775654</color>
+    <color name="skh_onSecondary">#FFFFFF</color>
+    <color name="skh_secondaryContainer">#FFDAD7</color>
+    <color name="skh_onSecondaryContainer">#2C1514</color>
+    <color name="skh_tertiary">#735A2E</color>
+    <color name="skh_onTertiary">#FFFFFF</color>
+    <color name="skh_tertiaryContainer">#FFDEA9</color>
+    <color name="skh_onTertiaryContainer">#271900</color>
+    <color name="skh_error">#BA1A1A</color>
+    <color name="skh_errorContainer">#FFDAD6</color>
+    <color name="skh_onError">#FFFFFF</color>
+    <color name="skh_onErrorContainer">#410002</color>
+    <color name="skh_background">#FFFBFF</color>
+    <color name="skh_onBackground">#201A1A</color>
+    <color name="skh_outline">#857372</color>
+    <color name="skh_inverseOnSurface">#FBEEEC</color>
+    <color name="skh_inverseSurface">#362F2E</color>
+    <color name="skh_inversePrimary">#FFB3AF</color>
+    <color name="skh_shadow">#000000</color>
+    <color name="skh_outlineVariant">#D7C1C0</color>
+    <color name="skh_scrim">#000000</color>
+    <color name="skh_surface">#FFF8F7</color>
+    <color name="skh_surfaceBright">#FFF8F7</color>
+    <color name="skh_surfaceContainerHighest">#EDE0DE</color>
+    <color name="skh_surfaceContainerHigh">#F2E5E4</color>
+    <color name="skh_surfaceContainer">#F8EBEA</color>
+    <color name="skh_surfaceContainerLow">#FEF1EF</color>
+    <color name="skh_surfaceContainerLowest">#FFFFFF</color>
+    <color name="skh_surfaceDim">#E4D7D6</color>
+    <color name="skh_surfaceTint">#B12A30</color>
+    <color name="skh_surfaceVariant">#F4DDDB</color>
+    <color name="skh_onSurface">#201A1A</color>
+    <color name="skh_onSurfaceVariant">#534342</color>
+    <!-- Primary 95 -->
+    <color name="skh_m3_background">#FFEDEB</color>
+    <!-- Primary 90 -->
+    <color name="skh_m3_bottom_menu">#FFDAD7</color>
+    <color name="skh_search_bar_background">#FFFFFF</color>
+</resources>

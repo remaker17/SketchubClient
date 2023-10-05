@@ -1,8 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="Theme.Sketchub" parent="Theme.Sketchub.Dark">
-        <item name="android:fontFamily">@font/inter_regular</item>
-        <item name="fontFamily">@font/inter_regular</item>
+    <style name="ThemeOverlay.Sketchub" parent="ThemeOverlay.Material3.Dark" />
+
+    <style name="ThemeOverlay.Sketchub.Amoled" parent="">
+        <item name="colorSurface">#080808</item>
+        <item name="android:colorBackground">#000000</item>
     </style>
 
 </resources>
