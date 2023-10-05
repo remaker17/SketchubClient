@@ -11,6 +11,25 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="Widget.Sketchub.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:background">?attr/m3ColorBackground</item>
+    </style>
+
+    <style name="Widget.Sketchub.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">?attr/m3ColorBottomMenuBackground</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.Sketchub.BottomNavigation.ActiveIndicator</item>
+        <item name="itemIconTint">@color/bottom_menu_active_item</item>
+    </style>
+
+    <style name="Widget.Sketchub.BottomNavigation.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/bottom_menu_active_indicator</item>
+    </style>
+
+    <style name="Widget.Sketchub.CardView.Outlined" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">?attr/colorSurfaceContainerLow</item>
+        <item name="strokeColor">?attr/colorSecondary</item>
+    </style>
+
     <style name="ThemeOverlay.Sketchub.MainToolbar" parent="">
         <item name="colorControlHighlight">@color/selector_overlay</item>
     </style>

@@ -3,4 +3,6 @@
     <attr name="roundSelector" format="reference" />
     <attr name="rectSelector" format="reference" />
     <attr name="searchBarBackgroundColor" format="color" />
+    <attr name="m3ColorBackground" format="color" />
+    <attr name="m3ColorBottomMenuBackground" format="color" />
 </resources>
