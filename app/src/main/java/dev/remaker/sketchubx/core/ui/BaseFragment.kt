@@ -10,7 +10,8 @@ import dev.remaker.sketchubx.BuildConfig
 import dev.remaker.sketchubx.core.ui.util.WindowInsetsDelegate
 
 @Suppress("LeakingThis")
-abstract class BaseFragment<B : ViewBinding> : Fragment(),
+abstract class BaseFragment<B : ViewBinding> :
+    Fragment(),
     WindowInsetsDelegate.WindowInsetsListener {
 
     var viewBinding: B? = null

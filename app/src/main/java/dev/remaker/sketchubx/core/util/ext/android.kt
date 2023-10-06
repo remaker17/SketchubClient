@@ -6,8 +6,8 @@ import android.provider.Settings
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.StringRes
 import androidx.annotation.Px
+import androidx.annotation.StringRes
 import androidx.core.view.*
 import androidx.fragment.app.Fragment
 import kotlinx.coroutines.channels.awaitClose

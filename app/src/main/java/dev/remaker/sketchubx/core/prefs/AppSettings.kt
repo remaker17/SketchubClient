@@ -9,11 +9,10 @@ import androidx.collection.ArraySet
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import dagger.hilt.android.qualifiers.ApplicationContext
-import org.json.JSONArray
 import dev.remaker.sketchubx.core.util.ext.connectivityManager
 import dev.remaker.sketchubx.core.util.ext.find
 import dev.remaker.sketchubx.core.util.ext.observe
-import dev.remaker.sketchubx.core.util.ext.mapNotNullToSet
+import org.json.JSONArray
 import javax.inject.Inject
 import javax.inject.Singleton
 

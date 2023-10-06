@@ -5,12 +5,12 @@ import android.net.ConnectivityManager.NetworkCallback
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
-import kotlinx.coroutines.flow.first
 import dev.remaker.sketchubx.core.util.MediatorStateFlow
 import dev.remaker.sketchubx.core.util.ext.isOnline
+import kotlinx.coroutines.flow.first
 
 class NetworkState(
-    private val connectivityManager: ConnectivityManager,
+    private val connectivityManager: ConnectivityManager
 ) : MediatorStateFlow<Boolean>(connectivityManager.isOnline()) {
 
     private val callback = NetworkCallbackImpl()

@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 class WindowInsetHolder @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    @AttrRes defStyleAttr: Int = 0,
+    @AttrRes defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     private var desiredHeight = 0

@@ -1,16 +1,15 @@
 package dev.remaker.sketchubx.announcements.ui
 
 import android.os.Bundle
-import android.view.View
 import androidx.core.graphics.Insets
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import dev.remaker.sketchubx.BuildConfig
 import dev.remaker.sketchubx.announcements.ui.adapter.AnnouncementsAdapter
 import dev.remaker.sketchubx.core.ui.BaseRVFragment
 import dev.remaker.sketchubx.core.ui.model.ProjectResponse
-import dev.remaker.sketchubx.core.util.logD
 import dev.remaker.sketchubx.core.util.ext.showToast
+import dev.remaker.sketchubx.core.util.logD
 import dev.remaker.sketchubx.databinding.FragmentRecyclerBinding
 import dev.remaker.sketchubx.net.SketchubApiService
 import kotlinx.coroutines.CoroutineScope
@@ -33,7 +32,6 @@ class AnnouncementsFragment : BaseRVFragment<AnnouncementsAdapter>() {
     }
 
     override fun onWindowInsetsChanged(insets: Insets) {
-
     }
 
     private fun refreshAnnouncements() {

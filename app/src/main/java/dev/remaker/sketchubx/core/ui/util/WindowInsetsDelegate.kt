@@ -23,7 +23,7 @@ class WindowInsetsDelegate : OnApplyWindowInsetsListener, View.OnLayoutChangeLis
         val newInsets = if (handleImeInsets) {
             Insets.max(
                 handledInsets.getInsets(WindowInsetsCompat.Type.systemBars()),
-                handledInsets.getInsets(WindowInsetsCompat.Type.ime()),
+                handledInsets.getInsets(WindowInsetsCompat.Type.ime())
             )
         } else {
             handledInsets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -44,7 +44,7 @@ class WindowInsetsDelegate : OnApplyWindowInsetsListener, View.OnLayoutChangeLis
         oldLeft: Int,
         oldTop: Int,
         oldRight: Int,
-        oldBottom: Int,
+        oldBottom: Int
     ) {
         view.removeOnLayoutChangeListener(this)
         if (lastInsets == null) { // Listener may not be called

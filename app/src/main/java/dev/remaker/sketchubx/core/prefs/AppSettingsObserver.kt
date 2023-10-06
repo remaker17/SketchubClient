@@ -24,7 +24,7 @@ fun <T> AppSettings.observeAsFlow(key: String, valueProducer: AppSettings.() -> 
 fun <T> AppSettings.observeAsStateFlow(
     scope: CoroutineScope,
     key: String,
-    valueProducer: AppSettings.() -> T,
+    valueProducer: AppSettings.() -> T
 ): StateFlow<T> = observe().transform {
     if (it == key) {
         emit(valueProducer())

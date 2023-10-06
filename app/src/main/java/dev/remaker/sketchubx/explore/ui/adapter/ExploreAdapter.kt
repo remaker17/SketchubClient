@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
 import dev.remaker.sketchubx.R
-import dev.remaker.sketchubx.databinding.LayoutHomeSectionBinding
 import dev.remaker.sketchubx.core.ui.cell.ProjectShimmerCell
 import dev.remaker.sketchubx.core.ui.component.RecyclerListView
 import dev.remaker.sketchubx.core.ui.model.Project
@@ -23,6 +22,7 @@ import dev.remaker.sketchubx.core.ui.model.SectionType
 import dev.remaker.sketchubx.core.util.AndroidUtilities
 import dev.remaker.sketchubx.core.util.ext.resolveColor
 import dev.remaker.sketchubx.core.util.ext.show
+import dev.remaker.sketchubx.databinding.LayoutHomeSectionBinding
 import dev.remaker.sketchubx.projects.ui.adapter.ProjectsAdapter
 
 class ExploreAdapter(private val items: ArrayList<Section>) :

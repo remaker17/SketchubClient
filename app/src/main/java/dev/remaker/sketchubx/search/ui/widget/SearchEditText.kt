@@ -29,7 +29,7 @@ private const val DRAWABLE_END = 2
 class SearchEditText @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    @AttrRes defStyleAttr: Int = materialR.attr.editTextStyle,
+    @AttrRes defStyleAttr: Int = materialR.attr.editTextStyle
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
     // var searchSuggestionListener: SearchSuggestionListener? = null
@@ -60,10 +60,10 @@ class SearchEditText @JvmOverloads constructor(
     }
 
     override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
-        if (event.isFromSource(InputDevice.SOURCE_KEYBOARD)
-            && (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER)
-            && event.hasNoModifiers()
-            && query.isNotEmpty()
+        if (event.isFromSource(InputDevice.SOURCE_KEYBOARD) &&
+            (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER) &&
+            event.hasNoModifiers() &&
+            query.isNotEmpty()
         ) {
             cancelLongPress()
             // searchSuggestionListener?.onQueryClick(query, submit = true)
@@ -84,7 +84,7 @@ class SearchEditText @JvmOverloads constructor(
         text: CharSequence?,
         start: Int,
         lengthBefore: Int,
-        lengthAfter: Int,
+        lengthAfter: Int
     ) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter)
         val empty = text.isNullOrEmpty()
@@ -153,7 +153,7 @@ class SearchEditText @JvmOverloads constructor(
             TextAppearanceSpan(context, R.style.TextAppearance_Sketchub_SearchView),
             0,
             formatted.length,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         return formatted
     }

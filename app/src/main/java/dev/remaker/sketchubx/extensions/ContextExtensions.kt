@@ -3,7 +3,6 @@ package dev.remaker.sketchubx.extensions
 import android.content.Context
 import android.content.res.Configuration
 import android.widget.Toast
-import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
 
 fun Context.showToast(@StringRes stringRes: Int, duration: Int = Toast.LENGTH_SHORT) {

@@ -8,7 +8,6 @@ import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionManager
-import com.google.android.material.R as materialR
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
 import com.google.android.material.appbar.AppBarLayout.LayoutParams.SCROLL_FLAG_NO_SCROLL
@@ -17,18 +16,21 @@ import com.google.android.material.appbar.AppBarLayout.LayoutParams.SCROLL_FLAG_
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import dev.remaker.sketchubx.R
-import dev.remaker.sketchubx.databinding.ActivityMainBinding
 import dev.remaker.sketchubx.core.prefs.AppSettings
 import dev.remaker.sketchubx.core.ui.BaseActivity
+import dev.remaker.sketchubx.databinding.ActivityMainBinding
 import dev.remaker.sketchubx.main.ui.owners.AppBarOwner
 import dev.remaker.sketchubx.main.ui.owners.BottomNavOwner
 import javax.inject.Inject
+import com.google.android.material.R as materialR
 
 private const val TAG_SEARCH = "search"
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>(),
-    AppBarOwner, BottomNavOwner,
+class MainActivity :
+    BaseActivity<ActivityMainBinding>(),
+    AppBarOwner,
+    BottomNavOwner,
     MainNavigationDelegate.OnFragmentChangedListener {
 
     @Inject
@@ -69,7 +71,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
     }
 
     override fun onWindowInsetsChanged(insets: Insets) {
-
     }
 
     private fun isSearchOpened(): Boolean {
@@ -106,11 +107,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
                 }
             )
             setHomeActionContentDescription(
-                if (isOpened) R.string.back else R.string.search,
+                if (isOpened) R.string.back else R.string.search
             )
         }
         viewBinding.searchView.setHintCompat(
-            if (isOpened) R.string.search_hint else R.string.search_project,
+            if (isOpened) R.string.search_hint else R.string.search_project
         )
         bottomNav?.visibility = if (isOpened) View.GONE else View.VISIBLE
     }

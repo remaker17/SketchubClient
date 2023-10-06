@@ -10,15 +10,8 @@ import androidx.core.view.iterator
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.transition.MaterialFadeThrough
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.onStart
 import dev.remaker.sketchubx.R
 import dev.remaker.sketchubx.announcements.ui.AnnouncementsFragment
 import dev.remaker.sketchubx.core.prefs.AppSettings
@@ -36,7 +29,8 @@ class MainNavigationDelegate(
     private val navBar: NavigationBarView,
     private val fragmentManager: FragmentManager,
     private val settings: AppSettings
-) : OnBackPressedCallback(false), NavigationBarView.OnItemSelectedListener,
+) : OnBackPressedCallback(false),
+    NavigationBarView.OnItemSelectedListener,
     NavigationBarView.OnItemReselectedListener {
 
     private val listeners = LinkedList<OnFragmentChangedListener>()
@@ -132,7 +126,7 @@ class MainNavigationDelegate(
                 R.id.nav_explore -> ExploreFragment()
                 R.id.nav_projects -> ProjectsFragment()
                 else -> return false
-            },
+            }
         )
     }
 

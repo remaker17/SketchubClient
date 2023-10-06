@@ -2822,7 +2822,8 @@ public class RecyclerListView extends RecyclerView {
             selectorDrawable =
                     new RippleDrawable(
                             ColorStateList.valueOf(
-                                    ColorKt.resolveColor(getContext(), R.attr.colorControlHighlight)),
+                                    ColorKt.resolveColor(
+                                            getContext(), R.attr.colorControlHighlight)),
                             null,
                             getRippleMask(colorBackground, 8));
             // Theme.setMaskDrawableRad(selectorDrawable, selectorRadius, 0);
@@ -2830,7 +2831,8 @@ public class RecyclerListView extends RecyclerView {
             selectorDrawable =
                     new RippleDrawable(
                             ColorStateList.valueOf(
-                                    ColorKt.resolveColor(getContext(), R.attr.colorControlHighlight)),
+                                    ColorKt.resolveColor(
+                                            getContext(), R.attr.colorControlHighlight)),
                             null,
                             getRippleMask(colorBackground, 8));
             // Theme.setMaskDrawableRad(selectorDrawable, position == 0 ? topBottomSelectorRadius :

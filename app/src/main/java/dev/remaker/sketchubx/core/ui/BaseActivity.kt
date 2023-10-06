@@ -18,7 +18,8 @@ import dev.remaker.sketchubx.core.ui.util.BaseActivityEntryPoint
 import dev.remaker.sketchubx.core.ui.util.WindowInsetsDelegate
 
 @Suppress("LeakingThis")
-abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(),
+abstract class BaseActivity<B : ViewBinding> :
+    AppCompatActivity(),
     WindowInsetsDelegate.WindowInsetsListener {
 
     private var isAmoledTheme = false
@@ -70,7 +71,9 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(),
     override fun onOptionsItemSelected(item: MenuItem) = if (item.itemId == android.R.id.home) {
         onBackPressed()
         true
-    } else super.onOptionsItemSelected(item)
+    } else {
+        super.onOptionsItemSelected(item)
+    }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (BuildConfig.DEBUG && keyCode == KeyEvent.KEYCODE_VOLUME_UP) {

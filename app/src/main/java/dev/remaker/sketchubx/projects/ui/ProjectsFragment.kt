@@ -1,7 +1,6 @@
 package dev.remaker.sketchubx.projects.ui
 
 import android.os.Bundle
-import android.view.View
 import androidx.core.graphics.Insets
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,8 +8,8 @@ import dev.remaker.sketchubx.BuildConfig
 import dev.remaker.sketchubx.core.ui.BaseRVFragment
 import dev.remaker.sketchubx.core.ui.model.Project
 import dev.remaker.sketchubx.core.ui.model.ProjectResponse
-import dev.remaker.sketchubx.core.util.logD
 import dev.remaker.sketchubx.core.util.ext.showToast
+import dev.remaker.sketchubx.core.util.logD
 import dev.remaker.sketchubx.databinding.FragmentRecyclerBinding
 import dev.remaker.sketchubx.net.SketchubApiService
 import dev.remaker.sketchubx.projects.ui.adapter.ProjectsAdapter
@@ -60,7 +59,6 @@ class ProjectsFragment : BaseRVFragment<ProjectsAdapter>() {
     }
 
     override fun onWindowInsetsChanged(insets: Insets) {
-
     }
 
     private fun refreshProjects(page: Int) {

@@ -11,7 +11,6 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
-import dev.remaker.sketchubx.core.util.PreferenceUtil
 
 fun Fragment.getIntRes(@IntegerRes int: Int): Int {
     return resources.getInteger(int)

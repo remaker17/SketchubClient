@@ -10,7 +10,6 @@ import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.use
 import androidx.fragment.app.Fragment
-import dev.remaker.sketchubx.R
 import dev.remaker.sketchubx.core.util.ColorUtil
 
 /**

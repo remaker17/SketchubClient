@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.core.content.withStyledAttributes
 import dev.remaker.sketchubx.R
-import dev.remaker.sketchubx.databinding.ItemPermissionBinding
 import dev.remaker.sketchubx.core.util.ColorUtil
 import dev.remaker.sketchubx.core.util.ext.resolveColor
+import dev.remaker.sketchubx.databinding.ItemPermissionBinding
 
 class PermissionItem @JvmOverloads constructor(
     context: Context,
