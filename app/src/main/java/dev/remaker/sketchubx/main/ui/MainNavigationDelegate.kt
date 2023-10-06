@@ -35,9 +35,9 @@ class MainNavigationDelegate(
 
     private val listeners = LinkedList<OnFragmentChangedListener>()
 
-    private val announcementsFragment = AnnouncementsFragment()
-    private val exploreFragment = ExploreFragment()
-    private val projectsFragment = ProjectsFragment()
+    private var announcementsFragment = AnnouncementsFragment()
+    private var exploreFragment = ExploreFragment()
+    private var projectsFragment = ProjectsFragment()
     private var activeFragment: Fragment = exploreFragment
 
     val primaryFragment: Fragment?
@@ -99,10 +99,10 @@ class MainNavigationDelegate(
     }
 
     fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        exploreFragment = fragmentManager.getFragment(savedInstanceState, "explore")
-        projectsFragment = fragmentManager.getFragment(savedInstanceState, "projects")
-        announcementsFragment = fragmentManager.getFragment(savedInstanceState, "announcements")
-        activeFragment = fragmentManager.getFragment(savedInstanceState, "active")
+        exploreFragment = fragmentManager.getFragment(savedInstanceState, "explore") as ExploreFragment
+        projectsFragment = fragmentManager.getFragment(savedInstanceState, "projects") as ProjectsFragment
+        announcementsFragment = fragmentManager.getFragment(savedInstanceState, "announcements") as AnnouncementsFragment
+        activeFragment = fragmentManager.getFragment(savedInstanceState, "active") as Fragment
 
         setPrimaryFragment(activeFragment, fromRestoredInstance = true)
     }
@@ -198,9 +198,9 @@ class MainNavigationDelegate(
     private fun createDefaultFragments(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             fragmentManager.beginTransaction()
-                .add(R.id.container, announcementsFragment, TAG_PRIMARY).hide(announcementsFragment)
-                .add(R.id.container, projectsFragment, TAG_PRIMARY).hide(projectsFragment)
                 .add(R.id.container, exploreFragment, TAG_PRIMARY)
+                .add(R.id.container, projectsFragment, TAG_PRIMARY).hide(projectsFragment)
+                .add(R.id.container, announcementsFragment, TAG_PRIMARY).hide(announcementsFragment)
                 .commit()
         }
     }
