@@ -54,11 +54,7 @@ class MainActivity :
             settings = settings
         )
         navigationDelegate.addOnFragmentChangedListener(this)
-        navigationDelegate.onCreate(this, savedInstanceState)
-
-        // if (savedInstanceState != null) {
-            // navigationDelegate.onRestoreInstanceState(savedInstanceState)
-        // }
+        navigationDelegate.onCreate(savedInstanceState)
 
         onBackPressedDispatcher.addCallback(navigationDelegate)
     }

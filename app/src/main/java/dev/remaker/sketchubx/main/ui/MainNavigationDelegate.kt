@@ -9,7 +9,6 @@ import androidx.core.view.isEmpty
 import androidx.core.view.iterator
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.LifecycleOwner
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.transition.MaterialFadeThrough
 import dev.remaker.sketchubx.R
@@ -54,7 +53,7 @@ class MainNavigationDelegate(
 
     override fun onNavigationItemReselected(item: MenuItem) {
         val fragment = fragmentManager.findFragmentByTag(TAG_PRIMARY)
-        if (fragment == null || fragment !is RecyclerViewOwner || fragment.view == null) {
+        if (fragment !is RecyclerViewOwner || fragment.view == null) {
             return
         }
         val recyclerView = fragment.recyclerView
@@ -69,7 +68,7 @@ class MainNavigationDelegate(
         navBar.selectedItemId = firstVisibleItemId() ?: return
     }
 
-    fun onCreate(lifecycleOwner: LifecycleOwner, savedInstanceState: Bundle?) {
+    fun onCreate(savedInstanceState: Bundle?) {
         if (navBar.menu.isEmpty()) {
             createMenuItems(settings.mainNavItems, navBar.menu)
         }
@@ -92,10 +91,12 @@ class MainNavigationDelegate(
     }
 
     fun onSaveInstanceState(outState: Bundle) {
-        fragmentManager.putFragment(outState, "explore", exploreFragment)
-        fragmentManager.putFragment(outState, "projects", projectsFragment)
-        fragmentManager.putFragment(outState, "announcements", announcementsFragment)
-        fragmentManager.putFragment(outState, "active", activeFragment)
+        fragmentManager.apply {
+            putFragment(outState, "explore", exploreFragment)
+            putFragment(outState, "projects", projectsFragment)
+            putFragment(outState, "announcements", announcementsFragment)
+            putFragment(outState, "active", activeFragment)
+        }
     }
 
     fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -104,7 +105,7 @@ class MainNavigationDelegate(
         announcementsFragment = fragmentManager.getFragment(savedInstanceState, "announcements") as AnnouncementsFragment
         activeFragment = fragmentManager.getFragment(savedInstanceState, "active") as Fragment
 
-        setPrimaryFragment(activeFragment, fromRestoredInstance = true)
+        onCreate(savedInstanceState)
     }
 
     fun setCounter(item: NavItem, counter: Int) {
@@ -116,13 +117,13 @@ class MainNavigationDelegate(
         if (counter == 0) {
             badge?.isVisible = false
         } else {
-            badge?.apply {
+            badge?.let {
                 if (counter < 0) {
-                    clearNumber()
+                    it.clearNumber()
                 } else {
-                    number = counter
+                    it.number = counter
                 }
-                isVisible = true
+                it.isVisible = true
             } ?: run {
                 val newBadge = navBar.getOrCreateBadge(id)
                 if (counter < 0) {
@@ -169,16 +170,16 @@ class MainNavigationDelegate(
         else -> throw IllegalStateException()
     }
 
-    private fun setPrimaryFragment(fragment: Fragment, fromRestoredInstance: Boolean = false): Boolean {
+    private fun setPrimaryFragment(fragment: Fragment): Boolean {
         if (fragmentManager.isStateSaved) {
-            return false
+           return false
         }
         fragment.enterTransition = MaterialFadeThrough()
         fragmentManager.beginTransaction()
-            .setReorderingAllowed(true)
-            .show(fragment).hide(activeFragment)
+            .show(fragment)
+            .hide(activeFragment)
             .commit()
-        onFragmentChanged(fragment, fromUser = if (fromRestoredInstance) false else true)
+        onFragmentChanged(fragment, fromUser = true)
         return true
     }
 
@@ -208,7 +209,9 @@ class MainNavigationDelegate(
     private fun firstVisibleItemId(): Int? {
         val menu = navBar.menu
         for (item in menu) {
-            if (item.isVisible) return item.itemId
+            if (item.isVisible) {
+                return item.itemId
+            }
         }
         return null
     }
