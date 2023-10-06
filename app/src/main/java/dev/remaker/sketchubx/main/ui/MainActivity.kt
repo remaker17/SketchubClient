@@ -66,7 +66,7 @@ class MainActivity :
 
     override fun onFragmentChanged(fragment: Fragment, fromUser: Boolean) {
         if (fromUser) {
-            viewBinding.appbar.setExpanded(true)
+            //viewBinding.appbar.setExpanded(true)
         }
     }
 
