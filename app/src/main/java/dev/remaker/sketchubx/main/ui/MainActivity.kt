@@ -56,12 +56,22 @@ class MainActivity :
         navigationDelegate.addOnFragmentChangedListener(this)
         navigationDelegate.onCreate(this, savedInstanceState)
 
+        // if (savedInstanceState != null) {
+            // navigationDelegate.onRestoreInstanceState(savedInstanceState)
+        // }
+
         onBackPressedDispatcher.addCallback(navigationDelegate)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        navigationDelegate.onSaveInstanceState(outState)
+        super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        adjustSearchUI(isOpened = isSearchOpened(), animate = false)
+        navigationDelegate.onRestoreInstanceState(savedInstanceState)
+        adjustSearchUI(isSearchOpened(), animate = false)
     }
 
     override fun onFragmentChanged(fragment: Fragment, fromUser: Boolean) {

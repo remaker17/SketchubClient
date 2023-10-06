@@ -91,14 +91,20 @@ class MainNavigationDelegate(
         }
     }
 
-    private fun createDefaultFragments(savedInstanceState: Bundle?) {
-        if (savedInstanceState == null) {
-            fragmentManager.beginTransaction()
-                .add(R.id.container, announcementsFragment, TAG_PRIMARY).hide(announcementsFragment)
-                .add(R.id.container, projectsFragment, TAG_PRIMARY).hide(projectsFragment)
-                .add(R.id.container, exploreFragment, TAG_PRIMARY)
-                .commit()
-        }
+    fun onSaveInstanceState(outState: Bundle) {
+        fragmentManager.putFragment(outState, "explore", exploreFragment)
+        fragmentManager.putFragment(outState, "projects", projectsFragment)
+        fragmentManager.putFragment(outState, "announcements", announcementsFragment)
+        fragmentManager.putFragment(outState, "active", activeFragment)
+    }
+
+    fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        exploreFragment = fragmentManager.getFragment(savedInstanceState, "explore")
+        projectsFragment = fragmentManager.getFragment(savedInstanceState, "projects")
+        announcementsFragment = fragmentManager.getFragment(savedInstanceState, "announcements")
+        activeFragment = fragmentManager.getFragment(savedInstanceState, "active")
+
+        setPrimaryFragment(activeFragment, fromRestoredInstance = true)
     }
 
     fun setCounter(item: NavItem, counter: Int) {
@@ -163,7 +169,7 @@ class MainNavigationDelegate(
         else -> throw IllegalStateException()
     }
 
-    private fun setPrimaryFragment(fragment: Fragment): Boolean {
+    private fun setPrimaryFragment(fragment: Fragment, fromRestoredInstance: Boolean = false): Boolean {
         if (fragmentManager.isStateSaved) {
             return false
         }
@@ -172,7 +178,7 @@ class MainNavigationDelegate(
             .setReorderingAllowed(true)
             .show(fragment).hide(activeFragment)
             .commit()
-        onFragmentChanged(fragment, fromUser = true)
+        onFragmentChanged(fragment, fromUser = if (fromRestoredInstance) false else true)
         return true
     }
 
@@ -186,6 +192,16 @@ class MainNavigationDelegate(
         items.forEach { item ->
             menu.add(Menu.NONE, item.id, Menu.NONE, item.title)
                 .setIcon(item.icon)
+        }
+    }
+
+    private fun createDefaultFragments(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            fragmentManager.beginTransaction()
+                .add(R.id.container, announcementsFragment, TAG_PRIMARY).hide(announcementsFragment)
+                .add(R.id.container, projectsFragment, TAG_PRIMARY).hide(projectsFragment)
+                .add(R.id.container, exploreFragment, TAG_PRIMARY)
+                .commit()
         }
     }
 
