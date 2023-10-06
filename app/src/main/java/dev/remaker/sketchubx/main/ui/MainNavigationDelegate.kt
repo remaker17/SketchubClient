@@ -35,6 +35,11 @@ class MainNavigationDelegate(
 
     private val listeners = LinkedList<OnFragmentChangedListener>()
 
+    private var active: Fragment? = null
+    private var announcementsFragment: AnnouncementsFragment? = null
+    private var exploreFragment: ExploreFragment? = null
+    private var projectsFragment: ProjectsFragment? = null
+
     val primaryFragment: Fragment?
         get() = fragmentManager.findFragmentByTag(TAG_PRIMARY)
 
@@ -68,6 +73,7 @@ class MainNavigationDelegate(
         if (navBar.menu.isEmpty()) {
             createMenu(settings.mainNavItems, navBar.menu)
         }
+        createFragments(savedInstanceState)
         val fragment = primaryFragment
         if (fragment != null) {
             onFragmentChanged(fragment, fromUser = false)
@@ -82,6 +88,30 @@ class MainNavigationDelegate(
                 navBar.selectedItemId
             }
             onNavigationItemSelected(itemId)
+        }
+    }
+
+    private fun createFragment(fragment: Fragment?): Fragment {
+        if (fragment is ExploreFragment) {
+            exploreFragment = ExploreFragment()
+            fragment = ExploreFragment()
+        } else if (fragment is ProjectsFragment) {
+            projectsFragment = ProjectsFragment()
+            fragment = projectsFragment
+        } else if (fragment is AnnouncementsFragment) {
+            announcementsFragment = AnnouncementsFragment()
+            fragment = announcementsFragment
+        } else {
+            throw IllegalStateException()
+        }
+        return fragment
+    }
+
+    private fun createFragments(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null)
+            fragmentManager.beginTransaction()
+                .add(R.id.container, createFragment(exploreFragment), TAG_PRIMARY)
+                .commit()
         }
     }
 
@@ -122,9 +152,9 @@ class MainNavigationDelegate(
     private fun onNavigationItemSelected(@IdRes itemId: Int): Boolean {
         return setPrimaryFragment(
             when (itemId) {
-                R.id.nav_announcements -> AnnouncementsFragment()
-                R.id.nav_explore -> ExploreFragment()
-                R.id.nav_projects -> ProjectsFragment()
+                R.id.nav_announcements -> announcementsFragment
+                R.id.nav_explore -> exploreFragment
+                R.id.nav_projects -> projectsFragment
                 else -> return false
             }
         )
@@ -137,20 +167,25 @@ class MainNavigationDelegate(
         else -> 0
     }
 
-    private fun setPrimaryFragment(fragment: Fragment): Boolean {
+    private fun setPrimaryFragment(fragment: Fragment?): Boolean {
         if (fragmentManager.isStateSaved) {
             return false
+        }
+        if (fragment == null) {
+            fragment = createFragment(fragment)
         }
         fragment.enterTransition = MaterialFadeThrough()
         fragmentManager.beginTransaction()
             .setReorderingAllowed(true)
-            .replace(R.id.container, fragment, TAG_PRIMARY)
+            .show(fragment).hide(active)
+            //.replace(R.id.container, fragment, TAG_PRIMARY)
             .commit()
         onFragmentChanged(fragment, fromUser = true)
         return true
     }
 
     private fun onFragmentChanged(fragment: Fragment, fromUser: Boolean) {
+        active = fragment
         isEnabled = getItemId(fragment) != firstItem()?.itemId
         listeners.forEach { it.onFragmentChanged(fragment, fromUser) }
     }
