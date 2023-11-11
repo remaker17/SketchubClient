@@ -9,7 +9,7 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v4
 
       - name: Delete old artifacts
         uses: actions/github-script@v6
